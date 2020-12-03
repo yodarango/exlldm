@@ -1,0 +1,110 @@
+/**VARIABLES**/
+:root
+{
+    --main-font: montserrat, sans-serif;
+    --black-font: 900;
+    --medium-font: 600; 
+    --main-color: #252422;
+    --second-color: rgb(224, 176, 16);
+    /**montserrat, sans-serif;**/
+}
+
+/******RESET STYLES******/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+    color: var(--main-color);
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a
+{
+color: var(--main-color);
+}
+
+/****HOME PAGE***/
+.index-menu
+{
+    width: 90%;
+    position: relative;
+    top: 2.5rem;
+    height: auto;
+    margin: auto ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.index-menu a
+{
+padding: 3%;
+font-size: 1rem;
+font-family: var(--main-font);
+font-weight: var(--medium-font);
+font-style: normal;
+}
+.ya-no-creo
+{
+    width: 90%;
+    margin: 6rem 5% 0;
+    position: absolute;
+    text-align: center;
+    font-size: 4rem;
+    font-family: var(--main-font);
+    font-weight: var(--black-font);
+    font-style: normal;
+
+}
+#sinking
+{
+    width: 80%;
+    position: relative;
+    margin: auto;
+    display: block;
+    top: 26rem;
+
+}
+.wrapper
+{
+    width: 100%;
+    height: 50rem;
+    background: var(--second-color);
+}

@@ -1,0 +1,25 @@
+{
+  "name": "exlldm",
+  "version": "1.0.0",
+  "description": "An application with no business intent and aim to help others",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yodarango/exlldm.git"
+  },
+  "author": "D. R.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yodarango/exlldm/issues"
+  },
+  "homepage": "https://github.com/yodarango/exlldm#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "nodemon": "^2.0.6"
+  }
+}
