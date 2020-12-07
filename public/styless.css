@@ -6,9 +6,11 @@
     --medium-font: 600; 
     --main-color: #252422;
     --second-color: rgb(224, 176, 16);
+    --third-color: #480ca8;
     --slim-font: 200;
     --main-font-size: 1rem;
-    --second-font-size: 1.8rem;
+    --second-font-size: 1.4rem;
+    --third-font-size: 1.8rem;
     /**montserrat, sans-serif;**/
 }
 
@@ -43,6 +45,7 @@ footer, header, hgroup, menu, nav, section {
 body {
     line-height: 1;
     color: var(--main-color);
+    /* max-width: 1000px; */
 }
 ol, ul {
 	list-style: none;
@@ -79,7 +82,7 @@ color: var(--main-color);
 .index-menu a
 {
 padding: 3%;
-font-size: 1rem;
+font-size: 4vw;
 font-family: var(--main-font);
 font-weight: var(--medium-font);
 font-style: normal;
@@ -88,27 +91,26 @@ font-style: normal;
 {
     width: 90%;
     margin: 6rem 5% 0;
-    position: absolute;
+    position: relative;
     text-align: center;
-    font-size: 4rem;
+    font-size: 15vw;
     font-family: var(--main-font);
     font-weight: var(--black-font);
     font-style: normal;
-
+    z-index: 2;
 }
 #sinking
 {
-    width: 80%;
+    width: 100%;
     position: relative;
     margin: auto;
     display: block;
-    top: 26rem;
+    top: 0;
 
 }
 .wrapper
 {
     width: 100%;
-    height: 50rem;
     background: var(--second-color);
 }
 .icon
@@ -121,13 +123,13 @@ font-style: normal;
 {
     display: inline-block;
     width: 3rem;
-    padding: 2rem 1rem 0 0 ;
+    padding: 0 1rem 0 0 ;
     float: left;
 }
-.thoguht-of-the-day-paragraph
+.thoguht-of-the-day-paragraph, .parragraph
 {
 width: 90%;
-margin: 3rem auto 0;
+margin: 8rem auto 0;
 font-family: var(--main-font);
 font-weight: var(--slim-font);
 font-style: normal;
@@ -137,22 +139,181 @@ font-size: var(--main-font-size)
 }
 .thoguht-of-the-day
 {
-    display: block;
+    padding-bottom: 1rem;
     margin-top: 2rem;
+    max-height: 23.5rem;
+    width: 100%;
 }
 .thoguht-of-the-day-paragraph h1
 {
     font-weight: var(--medium-font);
-    font-size: var(--second-font-size);
+    font-size: var(--third-font-size);
     text-align: center;
     margin: 2rem auto 0;
+}
+.thoguht-of-the-day-paragraph h3
+{
+    text-align: center;
+    font-size: 1.5rem;
+    font-size: var(--second-font-size);
+    font-weight: var(--medium-font);
+    margin: 2rem 0;
 }
 .read-more
 {
    text-decoration: underline;
-   margin: 0 auto 0;
+   margin: 0;
+   text-align: left;
+   font-weight: var(--medium-font);
 }
 .news-section
 {
+width: 100%;
+background-color: var(--main-color);
+margin: 4rem 0 0;
+padding-bottom: 2rem;
+}
+.news-section h3
+{
+   color: white;
+   text-align: center;
+   font-size: 1.5rem;
+   font-size: var(--second-font-size);
+   font-weight: var(--medium-font);
+   font-family: var(--main-font);
+   margin: 2rem auto;
+   width: 80%;
+}
+.news-section h1
+{
+    font-weight: var(--medium-font);
+    font-size: var(--third-font-size);
+    color: white;
+    font-family: var(--main-font);
+    text-align: center;
+    padding: 2rem 0;
+}
+.news-section img
+{
+    width: 80%;
+    margin: auto;
+    display: block;
+}
 
+.news-article
+{
+    color: white;
+    margin: 3rem auto 0;
+    padding-bottom: 2rem;
+    height: 20rem;
+    overflow-y: scroll;
+}
+.resources-count-setion
+{
+    display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+.rc-div
+{
+    width: 80%;
+    height: 20rem;
+    margin: 6rem auto;
+}
+.rc-r img
+{
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+.rc-r a
+{
+    display: block;
+    font-family: var(--main-font);
+    font-weight: var(--slim-font);
+    font-size: var(--main-font-size);
+    padding: 1rem;
+    color: var(--main-color);
+    text-align: center;
+    text-decoration: underline;
+}
+.resources-count-setion .h3
+{
+    color: var(--third-color);
+    text-align: center;
+    font-size: 1.5rem;
+    font-size: var(--second-font-size);
+    font-weight: var(--medium-font);
+    font-family: var(--main-font);
+    margin: 2rem auto;
+    text-align: center;
+}
+#count-trigger
+{
+    color: white;
+    font-family: var(--main-font);
+    font-weight: var(--medium-font);
+    font-size: var(--main-font-size);
+    padding: 1rem;
+    border-radius: 1rem;
+    background: var(--main-color);
+    width: 50%;
+    margin: 1rem auto;
+    text-align: center;
+}
+#count-trigger:hover
+{
+    color: var(--third-color);
+    transform: scale(.9);
+}
+#count-circle
+{
+    width: 37vw;
+    height: 37vw;
+    background: var(--third-color);
+    border-radius: 50%;
+    margin: auto;
+}
+.rc-c p
+{
+text-align: center;
+margin: 1rem auto 0;
+}
+footer
+{
+    height: 15rem;
+    clip-path: polygon(0% 0%, 100% 70%, 100% 100%, 0% 100%);
+    background: var(--main-color);
+    font-family: var(--main-font);
+    font-weight: var(--slim-font);
+    font-size: var(--main-font-size);
+    color: white;
+    box-sizing: border-box;
+}
+footer h4
+{
+ position: relative;
+ top: 7rem;
+ font-weight: var(--medium-font);
+ padding-left: 1rem;
+}
+footer a
+{
+position: relative;
+display: block;
+ top: 7rem;
+ color: white;
+ padding: .5rem 0 0 1rem ;
+}
+footer h5
+{
+    font-size: .8rem;
+    background: var(--third-color);
+    height: 2rem;
+    position: relative;
+    top: 9rem;
+    text-align: center;
+    line-height: 1.5rem;
+    font-weight: var(--medium-font);
+    overflow: hidden;
 }
