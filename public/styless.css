@@ -76,6 +76,7 @@ color: var(--main-color);
     height: auto;
     margin: auto ;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
@@ -86,6 +87,15 @@ font-size: 4vw;
 font-family: var(--main-font);
 font-weight: var(--medium-font);
 font-style: normal;
+}
+.index-menu a:hover
+{
+color: var(--second-color);
+cursor: pointer;
+}
+.menu-index a:hover
+{
+    color: white;
 }
 .ya-no-creo
 {
@@ -165,6 +175,12 @@ font-size: var(--main-font-size)
    margin: 0;
    text-align: left;
    font-weight: var(--medium-font);
+   width: 30%;
+}
+.read-more:hover
+{
+    color: var(--second-color);
+    cursor: pointer;
 }
 .news-section
 {
@@ -237,6 +253,11 @@ padding-bottom: 2rem;
     text-align: center;
     text-decoration: underline;
 }
+.rc-r a:hover
+{
+font-weight: var(--medium-font);
+cursor: pointer;
+}
 .resources-count-setion .h3
 {
     color: var(--third-color);
@@ -263,8 +284,9 @@ padding-bottom: 2rem;
 }
 #count-trigger:hover
 {
-    color: var(--third-color);
+    color: var(--second-color);
     transform: scale(.9);
+    cursor: pointer;
 }
 #count-circle
 {
@@ -329,6 +351,7 @@ footer h5
     width: 80%;
     margin: 4rem 10%;
     text-align: center;
+    line-height: 3rem;
 }
 .testimonies
 {
@@ -348,7 +371,7 @@ footer h5
     border: 10px solid var(--second-color);
     margin: 0 2rem .5rem;
 }
-.testimonies div img:hover
+.testimonies a img:hover
 {
     border: 10px solid var(--third-color);
 }
@@ -372,7 +395,22 @@ footer h5
     text-align: center;
     margin: .7rem auto 3rem;
 }
-
+#my-testimony-link
+{
+    color: white;
+    font-size: var(--second-font-size);
+    background: var(--third-color);
+    font-weight: var(--medium-font);
+    font-family: var(--main-font);
+    padding: .5rem .8rem;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    text-align: center;
+}
+#my-testimony-link:hover
+{
+    background: var(--second-color);
+}
 /*** My Testimonio***/
 .my-testimony-title
 {
@@ -386,4 +424,138 @@ footer h5
 .my-testimony-p
 {
     margin: 1rem auto 0;
+}
+/*****FORM****/
+.gender-dev
+{
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.gender-dev h3
+{
+    color: var(--third-color);
+    text-align: center;
+    font-size: 1.5rem;
+    width: 100%;
+    font-size: var(--second-font-size);
+    font-weight: var(--medium-font);
+    font-family: var(--main-font);
+    margin: 6rem auto 0;
+    text-align: center;
+}
+.gender-dev img
+{
+width: 4rem;
+padding: 1rem;
+display: inline-block;
+margin: .5rem 1.5rem;
+}
+.switch
+{
+    flex: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.female, .male
+{
+    padding: .2rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.genderF, .genderM
+{
+    opacity: 0;
+}
+.genderF:checked + .female
+{
+    border: 5px solid var(--second-color);
+}
+.genderM:checked + .male
+{
+    border: 5px solid var(--second-color);
+}
+
+/****THE FORM****/
+.the-form 
+{
+display: block;
+width: 80%;
+max-width: 800px;
+display: flex;
+flex-wrap: wrap;
+text-align: center;
+justify-content: center;
+margin:auto;
+}
+#form-title, #content, #form-button, #form-name
+{
+    display: block;
+    width: 80%;
+    border: 1px solid var(--third-color);
+    margin-bottom: 3rem;;
+    padding: 1rem;
+    font-size: var(--main-font-size);
+    font-family: var(--main-font-size);
+    color: var(--main-color);
+}
+.form-label
+{
+    margin: 1rem auto 0;
+    color: var(--third-color);
+    text-align: center;
+    font-size: 1.5rem;
+    font-size: var(--second-font-size);
+    font-weight: var(--medium-font);
+    font-family: var(--main-font);
+    text-align: center;
+}
+#form-button
+{
+    background: var(--third-color);
+    border-radius: 1.5rem;
+    color: white;
+    font-size: var(--second-font-size);
+    font-weight: var(--medium-font);
+    font-family: var(--main-font);
+}
+#form-button:hover
+{
+    cursor: pointer;
+    background: var(--second-color);
+    border: transparent;
+}
+.parragraph-form
+{
+margin: 1rem 0;
+}
+
+/****MAKLE A POST****/
+.form-separator
+{
+height: 6rem;
+}
+.post-type, .for-our-Lord
+{
+    color: var(--main-color);
+    text-align: center;
+    font-size: 1.8rem;
+    font-size: var(--second-font-size);
+    font-weight: var(--medium-font);
+    font-family: var(--main-font);
+    margin: 2rem auto;
+    width: 80%;
+}
+.for-our-Lord
+{
+font-size: 2.3rem;
 }

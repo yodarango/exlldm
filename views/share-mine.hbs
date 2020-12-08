@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styless.css">
+    <link rel="stylesheet" href="https://use.typekit.net/wmb0ekn.css">
+    <title>EXLLDM | Compartir Mi testimonio</title>
+</head>
+<body>
+     <header>
+        <div class="index-menu menu-share-mine">
+            <a href="/#news-section">NOTICIAS</a>
+            <a href="/#resources">RECURSOS</a>
+            <a href="/testimonios">TESTIMONIOS</a>
+        </div>
+    </header>
+    <div class="gender-dev">
+         <h3 class="h3">Genero</h3>
+        <label class="switch">
+        <input class="genderF" name="gender-button" type="radio">
+        <div class="female"><img src="/images/woman.png" alt="woman picture"></div>
+         </label>
+
+         <label class="switch">
+         <input class="genderM" name="gender-button" type="radio">
+        <div class="male"><img src="/images/man.png" alt="man picture"></div>  
+    </label>
+    </div>
+    {{>form}}
+    {{>footer}}
+</body>
+</html>
