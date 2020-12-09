@@ -497,7 +497,7 @@ text-align: center;
 justify-content: center;
 margin:auto;
 }
-#form-title, #content, #form-button, #form-name
+.form-title, .content, .form-button, #form-name
 {
     display: block;
     width: 80%;
@@ -521,7 +521,7 @@ margin:auto;
     width: 80%;
     max-width: 800px;
 }
-#form-button
+.form-button
 {
     background: var(--third-color);
     border-radius: 1.5rem;
@@ -530,7 +530,7 @@ margin:auto;
     font-weight: var(--medium-font);
     font-family: var(--main-font);
 }
-#form-button:hover
+.form-button:hover
 {
     cursor: pointer;
     background: var(--second-color);

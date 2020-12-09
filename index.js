@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/public'));
 const templatesPath = path.join(__dirname + '/templates');
 
 hbs.registerPartials(templatesPath);
-
+app.use(express.json());
 app.listen(process.env.PORT || 5000, ()=> 
 {
     console.log('listening')
@@ -78,9 +78,9 @@ app.get('/posts', (req, res)=>
     res.render('post')
 });
 
-app.post('/api', (req, res) =>
+app.post('/api', (request, res) =>
 {
-    const data = JSON.parse(req.body)
+   let data = request.body
     console.log(data)
     const timestamp = Date.now();
     database.insert(data);

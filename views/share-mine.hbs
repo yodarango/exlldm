@@ -18,16 +18,17 @@
     <div class="gender-dev">
          <h3 class="h3">Genero</h3>
         <label class="switch">
-        <input class="genderF" name="gender-button" type="radio">
+        <input class="genderF gender" value="female" name="gender-button" type="radio">
         <div class="female"><img src="/images/woman.png" alt="woman picture"></div>
          </label>
 
          <label class="switch">
-         <input class="genderM" name="gender-button" type="radio">
+         <input class="genderM gender" name="gender-button" value="male" type="radio">
         <div class="male"><img src="/images/man.png" alt="man picture"></div>  
     </label>
     </div>
     {{>form}}
     {{>footer}}
+    <script src="/js/client-js.js"></script>
 </body>
 </html>
