@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const hbs = require('hbs');
+const Datastore = require('nedb');
+
 
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
@@ -13,6 +15,9 @@ app.listen(process.env.PORT || 3000, ()=>
 {
     console.log('listening')
 });
+
+const database = new Datastore('database.db');
+database.loadDatabase();
 
 app.get('', (req, resp)=> 
 {
@@ -71,4 +76,17 @@ app.get('/share-mine', (req, res)=>
 app.get('/posts', (req, res)=>
 {
     res.render('post')
+});
+
+app.post('/posts-thought', (req, res) =>
+{
+
+    const data = req.body;
+    console.log(data)
+    const timestamp = Date.now();
+    database.insert('data');
+    res.json({
+        status: 'success',
+        timestamp: timestamp
+    });
 });
