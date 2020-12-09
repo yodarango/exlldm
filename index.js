@@ -11,7 +11,7 @@ const templatesPath = path.join(__dirname + '/templates');
 
 hbs.registerPartials(templatesPath);
 
-app.listen(process.env.PORT || 3000, ()=> 
+app.listen(process.env.PORT || 5000, ()=> 
 {
     console.log('listening')
 });
@@ -78,13 +78,12 @@ app.get('/posts', (req, res)=>
     res.render('post')
 });
 
-app.post('/posts-thought', (req, res) =>
+app.post('/api', (req, res) =>
 {
-
-    const data = req.body;
+    const data = JSON.parse(req.body)
     console.log(data)
     const timestamp = Date.now();
-    database.insert('data');
+    database.insert(data);
     res.json({
         status: 'success',
         timestamp: timestamp

@@ -1,5 +1,5 @@
-const thoughtTitle = document.querySelector('#form-title');
-const thoughtContent= document.querySelector('#form-title');
+const thoughtTitle = document.querySelector('#form-title').value;
+const thoughtContent= document.querySelector('#content').value;
 const newsArticleTitle= document.querySelector('#form-title');
 const newsArticleContent= document.querySelector('#form-title');
 const resourcesLink = document.querySelector('#form-title');
@@ -14,16 +14,15 @@ form.forEach(element => {
         e.preventDefault(); 
     });
 });
-submitThought.addEventListener('click', async ()=>
+submitThought.addEventListener('click', postIt);
+
+async function postIt()
 {
 
-    console.log('I have been clicked')
-let thoughtTData = thoughtTitle.value;
-let thoughtCData = thoughtContent.value;
             const data =  
                 {
-                 title: thoughtTData ,
-                 content: thoughtCData
+                 thoughtTitle,
+                thoughtContent
                 }
             const options = 
                 {
@@ -33,9 +32,9 @@ let thoughtCData = thoughtContent.value;
                     body: JSON.stringify(data)
                 };
 
-            const res = await fetch('/posts-thought', options);
+            const res = await fetch('/api', options);
             const json = await res.json();
             console.log(json)
-                console.log(data)
+            console.log(options.body)
             // window.location.href = window.location.href;
-});
+};
