@@ -304,6 +304,7 @@ margin: 1rem auto 0;
 footer
 {
     height: 15rem;
+    width: 100%;
     clip-path: polygon(0% 0%, 100% 70%, 100% 100%, 0% 100%);
     background: var(--main-color);
     font-family: var(--main-font);
@@ -312,6 +313,20 @@ footer
     color: white;
     box-sizing: border-box;
     margin-top: 4rem;
+}
+.footer-w-spacer
+{
+    margin-top: 8rem;
+    bottom: 0;
+    height: 15rem;
+    width: 100%;
+    clip-path: polygon(0% 0%, 100% 70%, 100% 100%, 0% 100%);
+    background: var(--main-color);
+    font-family: var(--main-font);
+    font-weight: var(--slim-font);
+    font-size: var(--main-font-size);
+    color: white;
+    box-sizing: border-box;
 }
 footer h4
 {
@@ -363,17 +378,45 @@ footer h5
     max-width: 1250px;
     margin: auto;
 }
-.testimonies a img
+/* .testimonies a img
 {
     width: 13rem;
     height: 13rem;
     border-radius: 50%;
     border: 10px solid var(--second-color);
     margin: 0 2rem .5rem;
-}
+} 
 .testimonies a img:hover
 {
     border: 10px solid var(--third-color);
+} */
+.testimony-div
+{
+    background: url(/images/woman.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    border: 10px solid var(--second-color);
+    margin: 0 2rem .5rem;
+}
+.testimony-div:hover, .testimony-div-male:hover 
+{
+    border: 10px solid var(--third-color);
+}
+.testimony-div-male
+{
+    background: url(/images/man.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    border: 10px solid var(--second-color);
+    margin: 0 2rem .5rem;
 }
 .testiomony-name
 {

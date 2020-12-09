@@ -55,17 +55,28 @@ resp.render('testimonios',
 })
 });
 
-app.get('/my-testimonio', (req, resp)=> 
+app.get('/my-testimonio/*', (req, res)=> 
 {
-resp.render('my-testimonio',
-{
-    title: 'Yo soy ',
-    testimonyTtile: 'My Historia',
-    content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys'+ 
-    ' standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.' + 
-    ' It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was ' + 
-    'popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing'
-})
+    let user = req.query.user
+
+    database.findOne({_id: user}, (err, doc) =>
+    {
+        res.render('my-testimonio',
+        {
+            title: doc.name,
+            testimonyTtile: doc.title,
+            content: doc.content
+        })
+    });
+//     res.render('my-testimonio',
+// {
+//     title: data(),
+//     testimonyTtile: 'My Historia',
+//     content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys'+ 
+//     ' standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.' + 
+//     ' It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was ' + 
+//     'popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing'
+// })
 }); 
 
 app.get('/share-mine', (req, res)=>
@@ -78,7 +89,8 @@ app.get('/posts', (req, res)=>
     res.render('post')
 });
 
-app.post('/api', (request, res) =>
+/////Post the testimony to the DBS
+app.post('/post-testimony', (request, res) =>
 {
    let data = request.body
     console.log(data)
@@ -89,3 +101,18 @@ app.post('/api', (request, res) =>
         timestamp: timestamp
     });
 });
+
+//Get the data from the DB
+app.get('/api', (req, res) =>
+{
+    database.find({}, (err, data) =>
+    {
+        if(err) {
+            response.end();
+            return;
+        }
+        res.json(data)
+    });
+});
+
+//redirect for teh testimony individual
