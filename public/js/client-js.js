@@ -69,7 +69,7 @@ async function getDataLoad()
     }
     let name = document.createElement('H3');
     name.setAttribute('class', 'testiomony-name');
-    name.textContent = item.name;
+    name.textContent = item.Name;
 
     let title = document.createElement('H4');
     title.setAttribute('class', 'testiomony-title');

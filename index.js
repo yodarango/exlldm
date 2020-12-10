@@ -65,7 +65,7 @@ app.get('/my-testimonio/*', (req, res)=>
     {
         res.render('my-testimonio',
         {
-            title: doc.name,
+            title: doc.Name,
             testimonyTtile: doc.title,
             content: doc.content
         })
