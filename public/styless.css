@@ -295,6 +295,16 @@ cursor: pointer;
     background: var(--third-color);
     border-radius: 50%;
     margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#count-circle h1
+{
+    color: white;
+    font-family: var(--main-font);
+    font-weight: var(--black-font);
+    font-size: 3.3rem;
 }
 .rc-c p
 {
@@ -303,7 +313,7 @@ margin: 1rem auto 0;
 }
 footer
 {
-    height: 15rem;
+    height: 20rem;
     width: 100%;
     clip-path: polygon(0% 0%, 100% 70%, 100% 100%, 0% 100%);
     background: var(--main-color);
@@ -318,7 +328,7 @@ footer
 {
     margin-top: 8rem;
     bottom: 0;
-    height: 15rem;
+    height: 20rem;
     width: 100%;
     clip-path: polygon(0% 0%, 100% 70%, 100% 100%, 0% 100%);
     background: var(--main-color);
@@ -331,7 +341,7 @@ footer
 footer h4
 {
  position: relative;
- top: 7rem;
+ top: 8rem;
  font-weight: var(--medium-font);
  padding-left: 1rem;
 }
@@ -339,7 +349,7 @@ footer a
 {
 position: relative;
 display: block;
- top: 7rem;
+ top: 9rem;
  color: white;
  padding: .5rem 0 0 1rem ;
 }
@@ -347,13 +357,14 @@ footer h5
 {
     font-size: .8rem;
     background: var(--third-color);
-    height: 2rem;
+    height: 5rem;
     position: relative;
-    top: 9rem;
+    top: 12.5rem;
     text-align: center;
     line-height: 1.5rem;
     font-weight: var(--medium-font);
     overflow: hidden;
+    z-index: 5;
 }
 
 /****TESTIMONIOS**/
@@ -378,18 +389,6 @@ footer h5
     max-width: 1250px;
     margin: auto;
 }
-/* .testimonies a img
-{
-    width: 13rem;
-    height: 13rem;
-    border-radius: 50%;
-    border: 10px solid var(--second-color);
-    margin: 0 2rem .5rem;
-} 
-.testimonies a img:hover
-{
-    border: 10px solid var(--third-color);
-} */
 .testimony-div
 {
     background: url(/images/woman.png);

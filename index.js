@@ -18,6 +18,8 @@ app.listen(process.env.PORT || 5000, ()=>
 
 const database = new Datastore('database.db');
 database.loadDatabase();
+const counter = new Datastore('counter.db');
+counter.loadDatabase();
 
 app.get('', (req, resp)=> 
 {
@@ -68,15 +70,6 @@ app.get('/my-testimonio/*', (req, res)=>
             content: doc.content
         })
     });
-//     res.render('my-testimonio',
-// {
-//     title: data(),
-//     testimonyTtile: 'My Historia',
-//     content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys'+ 
-//     ' standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.' + 
-//     ' It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was ' + 
-//     'popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing'
-// })
 }); 
 
 app.get('/share-mine', (req, res)=>
@@ -115,4 +108,23 @@ app.get('/api', (req, res) =>
     });
 });
 
-//redirect for teh testimony individual
+//get the counter route
+app.post('/counter', (req, res)=>
+{
+let newCount = req.body
+counter.insert(newCount);
+console.log(newCount)
+});
+
+app.get('/getcount', (req, res)=>
+{
+    counter.find({count: 'a'}, (err, data) =>
+    {
+        if(err) {
+            response.end();
+            return;
+        }
+        res.json(data)
+        console.log(data.length)
+    });
+})

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/wmb0ekn.css">
     <title>EXLLDM | Conoce La Verdad</title>
 </head>
-<body>
+<body onload="getCount()">
     <div class="wrapper">
     <header>
         <div class="index-menu menu-index">
@@ -42,12 +42,13 @@
 <a href="#">Placeholder</a>
 </div>
 <div class="rc-div rc-c">
-    <div id="count-circle">{{count}}</div>
+    <div id="count-circle"><h1></h1></div>
     <h3 class="h3">SOY EXLLDM</h3>
-    <p class="parragraph">Unete a la cuenta!</p>
+    <p id="counter-text" class="parragraph">Unete a la cuenta!</p>
     <div id="count-trigger">Cuentame</div>
 </div>
 </div>
 {{>footer}}
+<script src="/js/small-func.js"></script>
 </body>
 </html>
