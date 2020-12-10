@@ -1,3 +1,4 @@
+const fs = require('fs');
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -20,34 +21,45 @@ const database = new Datastore('database.db');
 database.loadDatabase();
 const counter = new Datastore('counter.db');
 counter.loadDatabase();
+const indexFiles = new Datastore('indexFiles.db');
+indexFiles.loadDatabase();
 
-app.get('', (req, resp)=> 
+app.get('', (req, res)=> 
 {
-    //Thought of the day
-let thoughtOfTheDay = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys'+ 
-' standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.' + 
-' It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was ' + 
-'popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing'
-' software like Aldus PageMaker including versions of Lorem Ipsum'
-let title = 'For Today'
-
-//news section
-
-let newsTitle = 'Lo Encierran por pedofilo y degenarado'
-let newsArticle = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys'+ 
-' standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.' + 
-' It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was ' + 
-'popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing'
-' software like Aldus PageMaker including versions of Lorem Ipsum'
-
-resp.render('index',
+indexFiles.find({}, (err, data) =>
 {
-    title,
-    thoughtOfTheDay,
-    newsTitle,
-    newsArticle
-})
+    if(err) {
+        response.end();
+        return;
+            }
+    res.render('index',
+    {
+        blogTitle: data.thoughtTitle,
+        blogContent: data.thoughtContent,
+        newsTitle: data.newsArticleTitle,
+        newsContent: data.newsArticleContent,
+        linkTitle: data.linkTitle,
+        linkLink: data.linkContent
+    })
 });
+});
+app.post('/index-files', (req, res) =>
+{
+    let data = req.body;
+    indexFiles.insert(data)
+})
+
+app.get('/get-resources', (req, res) =>
+{
+    indexFiles.find({}, (err, data) =>
+    {
+        if(err) {
+            response.end();
+            return;
+        }
+        res.json(data)
+})
+})
 
 app.get('/testimonios', (req, resp)=> 
 {

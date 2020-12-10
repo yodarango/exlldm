@@ -27,11 +27,32 @@ console.log(json)
 
 })
 
+let  onloadFunctions =function()
+{
 async function getCount()
 {
     let circleCount = document.querySelector('#count-circle h1')
     const res = await fetch('/getcount')
     const data = await res.json();
     circleCount.textContent = data.length
-    
+    console.log(data)
 }
+
+async function getResourceCount()
+{
+    const res = await fetch('/get-resources')
+    const data = await res.json();
+    let aTagWrap = document.querySelector('.rc-r');
+    
+    for (item of data)
+    {
+        let aTag = document.createElement('A');
+        aTag.setAttribute('href', item.linkContent);
+        aTag.textContent = item.linkTitle
+        aTagWrap.appendChild(aTag);
+        console.log(data)
+    }
+}
+getCount()
+getResourceCount()
+};

@@ -1,29 +1,28 @@
 <form class="the-form">
-    <h1 class="for-our-Lord">Para la gloria de nuestro Señor Jesucristo, 
-        dejale caer la pluma!✍️ 
+    <h1 class="for-our-Lord">Para la gloria de nuestro Señor Jesucristo!✍️ 
     </h1>
     <h2 class="post-type">PENSAMIENTO DEL DIA</h2>
     <label class="form-label" for="form-title">Titulo</label>
     <input class="form-title" id="form-title-thought" type="text" maxlength="50" required>
      <label class="form-label"  for="form-content">Relato</label>
     <textarea class="content" name="content" id="content-thought" cols="30" rows="10"></textarea>
-    <button id="button-thought" class="form-button">Publicar</button>
+    <button onclick="postThought()" id="button-thought" class="form-button">Publicar</button>
 </form>
 
 <form class="the-form">
     <h2 class="post-type">SECCION DE NOTICIAS</h2>
     <label class="form-label" for="form-title">Titulo</label>
-    <input class="form-title" id="form-title" type="text" maxlength="50" required>
+    <input class="form-title" id="form-title-news" type="text" maxlength="50" required>
      <label class="form-label"  for="form-content">Relato</label>
-    <textarea class="content" name="content" id="content" cols="30" rows="10"></textarea>
-    <button id="button-news" class="form-button">Publicar</button>
+    <textarea class="content" name="content" id="content-news" cols="30" rows="10"></textarea>
+    <button onclick="postNews()" id="button-news" class="form-button">Publicar</button>
 </form>
 
 <form class="the-form">
     <h2 class="post-type">SECCION DE RECURSOS</h2>
-    <label class="form-label" for="form-title">Documento</label>
-    <input class="content" id="form-title" type="text" maxlength="1500" required>
-     {{!-- <label class="form-label"  for="form-content">Relato</label>
-    <textarea name="content" id="content" cols="30" rows="10"></textarea> --}}
-    <button class="form-button">Publicar</button>
+    <label class="form-label" for="form-title">Nombre Del Documento</label>
+    <input class="content" id="form-title-link" type="text" maxlength="1500" required>
+     <label class="form-label"  for="form-link">Link Del Documento</label>
+    <input class="content" id="form-link" type="text" maxlength="1000" required>
+    <button onclick="postResource()" class="form-button">Publicar</button>
 </form>

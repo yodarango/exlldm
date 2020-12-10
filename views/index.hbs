@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/wmb0ekn.css">
     <title>EXLLDM | Conoce La Verdad</title>
 </head>
-<body onload="getCount()">
+<body onload="onloadFunctions()">
     <div class="wrapper">
     <header>
         <div class="index-menu menu-index">
@@ -22,24 +22,23 @@
 <div id="reflection" class="thoguht-of-the-day-paragraph">
     <img class="icon" src="/images/blog.png" alt="A blog icon">
     <h1>REFLEXION DEL DIA</h1>
-    <h3>{{title}}</h3>
+    <h3>{{blogTitle}}</h3>
     <img class="quotation-mark-icon" src="/images/quotation-mark.png" alt="quotation mark icon">
-    <p class="parragraph thoguht-of-the-day">{{thoughtOfTheDay}}</p>
-    <div class="thoguht-of-the-day-paragraph read-more">Read More...</div>
+    <p class="parragraph thoguht-of-the-day">{{blogContent}}</p>
 </div>
 <div id="news-section" class="news-section">
 <h1 id="noticas-wrapper">NOTICIAS</h1>
 <img src="/images/building.jpg" alt="news article image">
 <h3>{{newsTitle}}</h3>
-<p class="parragraph news-article">{{newsArticle}}</p>
+<p class="parragraph news-article">{{newsContent}}</p>
 </div>
 <div id="resources" class="resources-count-setion">
 <div class="rc-div rc-r">
 <img src="/images/book.png" alt="book icon">
-<h3 class="h3">RECURSOS</h3>
+<h3 id = "resources" class="h3">RECURSOS</h3>
+{{!-- <a href="#">placeholder</a>
 <a href="#">placeholder</a>
-<a href="#">placeholder</a>
-<a href="#">Placeholder</a>
+<a href="#">Placeholder</a> --}}
 </div>
 <div class="rc-div rc-c">
     <div id="count-circle"><h1></h1></div>

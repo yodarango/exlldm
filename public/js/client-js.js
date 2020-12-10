@@ -78,12 +78,73 @@ async function getDataLoad()
 };
 }
 
-//Createa  testimony re-direct
 
-// const newsArticleTitle= document.querySelector('#form-title');
-// const newsArticleContent= document.querySelector('#form-title');
-// const resourcesLink = document.querySelector('#form-title');
-// const submitThought = document.querySelector('#button-thought');
-// const submitNews = document.querySelector('.button-news')
+/*********INDEX ROUTES ***************/
 
+///////////blog part
+async function postThought ()
+{
+    location.reload();
+    const thoughtTitle= document.querySelector('#form-title-thought').value;
+    const thoughtContent= document.querySelector('#content-thought').value;
 
+    const option = 
+    {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'},
+        body: JSON.stringify(
+           {thoughtTitle,
+            thoughtContent,
+        type: 'blog'}
+        )
+    }
+   const res = await fetch('/index-files', option);
+   const json = await res.json();
+   console.log(json)
+};
+
+//////news part
+async function postNews()
+{
+    location.reload();
+    const newsArticleTitle= document.querySelector('#form-title-news').value;
+    const newsArticleContent = document.querySelector('#content-news').value;
+
+    const option = 
+    {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'},
+        body: JSON.stringify(
+           {newsArticleTitle,
+               newsArticleContent,
+            type: 'news'}
+        )
+    }
+   const res = await fetch('/index-files', option);
+   const json = await res.json();
+   console.log(json)
+};
+
+async function postResource()
+{
+    location.reload();
+    const linkTitle= document.querySelector('#form-title-link').value;
+    const linkContent = document.querySelector('#form-link').value;
+
+    const option = 
+    {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'},
+        body: JSON.stringify(
+           {linkTitle,
+               linkContent,
+            type: 'link'}
+        )
+    }
+   const res = await fetch('/index-files', option);
+   const json = await res.json();
+   console.log(json)
+}
