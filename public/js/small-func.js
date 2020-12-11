@@ -35,12 +35,11 @@ async function getCount()
     const res = await fetch('/getcount')
     const data = await res.json();
     circleCount.textContent = data.length
-    console.log(data)
 }
 
 async function getResourceCount()
 {
-    const res = await fetch('/get-resources')
+    const res = await fetch('/get-resource')
     const data = await res.json();
     let aTagWrap = document.querySelector('.rc-r');
     
@@ -50,9 +49,25 @@ async function getResourceCount()
         aTag.setAttribute('href', item.linkContent);
         aTag.textContent = item.linkTitle
         aTagWrap.appendChild(aTag);
-        console.log(data)
     }
+}
+async function getBlogContent()
+{
+    const res = await fetch('/get-resources')
+    const data = await res.json();
+
+    let blogTitle = document.querySelector('#blog-title');
+    let blogContent = document.querySelector('#blog-content');
+    let newsTitle = document.querySelector('#newsTitle');
+    let newsContent = document.querySelector('#newsContent');
+
+    blogTitle.textContent = data[0].title;
+    blogContent.textContent = data[1].content;
+    newsTitle.textContent = data[2].title;
+    newsContent.textContent= data[3].content;
+
 }
 getCount()
 getResourceCount()
+getBlogContent()
 };

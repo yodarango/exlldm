@@ -144,7 +144,7 @@ async function postResource()
             type: 'link'}
         )
     }
-   const res = await fetch('/index-files', option);
+   const res = await fetch('/index-file', option);
    const json = await res.json();
    console.log(json)
 }

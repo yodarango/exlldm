@@ -26,39 +26,57 @@ indexFiles.loadDatabase();
 
 app.get('', (req, res)=> 
 {
-indexFiles.find({}, (err, data) =>
-{
-    if(err) {
-        response.end();
-        return;
-            }
-    res.render('index',
-    {
-        blogTitle: data.thoughtTitle,
-        blogContent: data.thoughtContent,
-        newsTitle: data.newsArticleTitle,
-        newsContent: data.newsArticleContent,
-        linkTitle: data.linkTitle,
-        linkLink: data.linkContent
-    })
-});
+    res.render('index')
+
 });
 app.post('/index-files', (req, res) =>
 {
+    let blogTitle = req.body.thoughtTitle;
+    let blogContent = req.body.thoughtContent;
+    let newsTitle = req.body.newsArticleTitle;
+    let newsContent = req.body.newsArticleContent;
+
+    if(blogContent && blogTitle)
+    {
+        fs.writeFileSync(__dirname + '/indexTextFiles/blogTitle.txt',  blogTitle, 'utf8');
+        fs.writeFileSync(__dirname + '/indexTextFiles/BlogContent.txt',  blogContent, 'utf8');
+
+    }else if (newsContent && newsTitle)
+    {
+        fs.writeFileSync(__dirname + '/indexTextFiles/newsContent.txt', newsContent, 'utf8');
+        fs.writeFileSync(__dirname + '/indexTextFiles/newsTitle.txt',  newsTitle, 'utf8');
+    }
+
+})
+app.post('/index-file', (req, res) =>
+{
     let data = req.body;
     indexFiles.insert(data)
+
 })
 
 app.get('/get-resources', (req, res) =>
 {
-    indexFiles.find({}, (err, data) =>
+    let blogTitle = {title: fs.readFileSync(__dirname + '/indexTextFiles/blogTitle.txt', 'utf8')};
+    let blogContent = {content: fs.readFileSync(__dirname + '/indexTextFiles/BlogContent.txt', 'utf8')};
+    let newsTitle = {title: fs.readFileSync(__dirname + '/indexTextFiles/newsTitle.txt', 'utf8')};
+    let newsContent = {content: fs.readFileSync(__dirname + '/indexTextFiles/newsContent.txt', 'utf8')};    
+    let data = [blogTitle, blogContent, newsTitle, newsContent]
+
+    res.json(data)
+})
+
+app.get('/get-resource', (req, res) =>
+{
+    indexFiles.find({}, (err, data)=>
     {
-        if(err) {
-            response.end();
-            return;
+        if (err)
+        {
+            res.end();
+            return
         }
         res.json(data)
-})
+    })
 })
 
 app.get('/testimonios', (req, resp)=> 
