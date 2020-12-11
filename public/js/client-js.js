@@ -148,3 +148,23 @@ async function postResource()
    const json = await res.json();
    console.log(json)
 }
+
+///LOGIN PAGE
+
+ async function login()
+{
+    
+    let res = await fetch('/login');
+    let data = await res.json()
+
+    let username = document.querySelector('#username');
+    let password =  document.querySelector('#password');
+    let pass = data.pass;
+    let user = data.user
+
+if (username.value === user && password.value === pass)
+{
+    location.href = data.red
+}
+    console.log(data.pass)
+}

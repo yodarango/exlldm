@@ -107,7 +107,7 @@ app.get('/share-mine', (req, res)=>
     res.render('share-mine')
 });
 
-app.get('/posts', (req, res)=>
+app.get('/fjdkzmbcxdslheprpyewyqpyewbds', (req, res)=>
 {
     res.render('post')
 });
@@ -157,4 +157,17 @@ app.get('/getcount', (req, res)=>
         res.json(data)
         console.log(data.length)
     });
+})
+app.get('/login', (req, res) =>
+{
+let pass ='%5010J35U554lv4%';
+let user = 'EXLLDM';
+let red = '/fjdkzmbcxdslheprpyewyqpyewbds';
+let credentials = 
+{
+    pass, 
+    user, 
+    red
+}
+res.json(credentials);
 })

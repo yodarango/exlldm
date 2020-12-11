@@ -610,7 +610,11 @@ font-size: 2.3rem;
 margin: 1rem auto 1rem;
 display: block;
 }
-
+/**LOGIN***/
+.footer-login-separator
+{
+    height: 9rem;
+}
 @media only screen and (min-width: 700px)
 {
 
@@ -836,4 +840,9 @@ font-size: 2.3rem;
 margin: 1rem auto 1rem;
 display: block;
 }
+}
+/***LOGIN PAGE***/
+.footer-login-separator
+{
+    height: 13rem;
 }

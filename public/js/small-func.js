@@ -3,6 +3,7 @@ let counterText = document.querySelector('#counter-text');
 
 counter.addEventListener('click', async ()=>
 {
+    document.cookie = 'vote=checked; expires=' + new Date(2100, 0, 1).toUTCString;
     location.reload();
     counter.style.display= 'none'
     counterText.textContent= "Ya te has unido a la cuenta"
@@ -67,6 +68,15 @@ async function getBlogContent()
     newsContent.textContent= data[3].content;
 
 }
+function youHAveVoted()
+{
+    if (document.cookie)
+    {
+    counter.style.display= 'none'
+    counterText.textContent= "Ya te has unido a la cuenta"
+    }
+}
+youHAveVoted()
 getCount()
 getResourceCount()
 getBlogContent()
